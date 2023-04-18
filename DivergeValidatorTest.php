@@ -15,7 +15,6 @@ class DivergeValidatorTest extends TestCase
     public function testValidationFailedMessage(): void
     {
         $response = $this->post('/testValidation', ['newPrice' => 106, 'currentPrice' => 100]);
-        $test = $response->exception->getMessage();
 
         $this->assertStringContainsString('отклонения', $response->exception->getMessage());
     }
